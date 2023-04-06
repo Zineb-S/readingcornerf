@@ -1,0 +1,67 @@
+#navbar{
+  background-color: rgb(255, 255, 255);
+  border-radius: 70px;
+  
+}
+#navicons{
+  width: 20px;
+  height: 20px;
+}
+#purchasebtn {
+  border-radius: 60%;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#banner{
+  width: 100%;
+  height: 350px;
+
+}
+#search{
+  width: 80%;
+  
+  margin: 20px;
+  align-content: center;
+}
+#engbooks{
+  display: flex;
+  margin: 20px;
+}
+
+#frbooks{
+  display: flex;
+  margin: 20px;
+  margin-bottom: 100px;
+}
+.cards{
+  width: 200px;
+}
+#slidebanner{
+border-radius: 30px;
+ 
+}
+#userorders{
+  margin: 100px auto;
+}
