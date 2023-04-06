@@ -26,7 +26,7 @@ const Sidebar = () => {
     e.preventDefault();
 
     try {
-      const res2 = await axios.post("http://localhost:3001/api/logout",
+      const res2 = await axios.post("https://readingcornerb.herokuapp.com/api/logout",
         token
         , {
           headers: {

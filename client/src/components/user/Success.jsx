@@ -14,7 +14,7 @@ const Success = () => {
 
     if (total) {
       try {
-        const res = axios.post(`http://localhost:3001/api/orders/create`, { books: orderBooks, total: total, date: date, id: currentUserID });
+        const res = axios.post(`https://readingcornerb.herokuapp.com/api/orders/create`, { books: orderBooks, total: total, date: date, id: currentUserID });
         if (res) { toast.success('Order Added'); }
 
       } catch (err) {

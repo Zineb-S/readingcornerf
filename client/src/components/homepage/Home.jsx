@@ -30,7 +30,7 @@ import NavbarComponent from "./Navbar";
 const Home = () => {
   const [book, setBooks] = React.useState([])
   React.useEffect(() => {
-    axios.get('http://localhost:3001/api/books').then((response) => {
+    axios.get('https://readingcornerb.herokuapp.com/api/books').then((response) => {
       setBooks(response.data)
       
       

@@ -20,7 +20,7 @@ const Account = () => {
   
   const [order, setOrder] = React.useState([])
   React.useEffect(() => {
-    axios.get(`http://localhost:3001/api/user/history/${currentUserID}`).then((response) => {
+    axios.get(`https://readingcornerb.herokuapp.com/api/user/history/${currentUserID}`).then((response) => {
       setOrder(response.data)
     console.log(currentUserID)
     })
@@ -59,7 +59,7 @@ const Account = () => {
     e.preventDefault();
 
     try {
-      const res2 = await axios.post("http://localhost:3001/api/logout",
+      const res2 = await axios.post("https://readingcornerb.herokuapp.com/api/logout",
         token //token 
         , {
           headers: {

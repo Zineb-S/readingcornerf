@@ -20,7 +20,7 @@ import { ToastContainer } from 'react-toastify';
 const Users = () => {
   const [user, setUser] = React.useState([])
   React.useEffect(() => {
-    axios.get('http://localhost:3001/api/users').then((response) => {
+    axios.get('https://readingcornerb.herokuapp.com/api/users').then((response) => {
       setUser(response.data)
     
     })

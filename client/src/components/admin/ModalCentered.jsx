@@ -43,7 +43,7 @@ const ModalCentered = (props) => {
  // HANDLING USER ( ADD / EDIT / DELETE)
   const [us, setUs] = React.useState([])
   React.useEffect(() => {
-    axios.get('http://localhost:3001/api/users').then((response) => {
+    axios.get('https://readingcornerb.herokuapp.com/api/users').then((response) => {
       setUs(response.data)
       console.log(response.data)
       
@@ -51,7 +51,7 @@ const ModalCentered = (props) => {
   }, []);
   const [book, setBooks] = React.useState([])
   React.useEffect(() => {
-    axios.get('http://localhost:3001/api/books').then((response) => {
+    axios.get('https://readingcornerb.herokuapp.com/api/books').then((response) => {
       setBooks(response.data)
       console.log(response.data)
       
@@ -59,7 +59,7 @@ const ModalCentered = (props) => {
   }, []);
   const [order, setOrders] = React.useState([])
   React.useEffect(() => {
-    axios.get('http://localhost:3001/api/orders').then((response) => {
+    axios.get('https://readingcornerb.herokuapp.com/api/orders').then((response) => {
       setOrders(response.data)
       console.log(response.data)
       
@@ -78,7 +78,7 @@ const ModalCentered = (props) => {
 
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:3001/api/users/create`, {email: email, password: password, fname: fname, lname: lname, role: role});
+      const res = await axios.post(`https://readingcornerb.herokuapp.com/api/users/create`, {email: email, password: password, fname: fname, lname: lname, role: role});
       if (res) {toast.success('User Added');}
 
     } catch (err) {
@@ -90,7 +90,7 @@ const ModalCentered = (props) => {
   const handleEditUser = async (e) => {
 
     e.preventDefault();
-    axios.put(`http://localhost:3001/api/users/edit`, {
+    axios.put(`https://readingcornerb.herokuapp.com/api/users/edit`, {
       email: email, password: password, fname: fname, lname: lname, role: role, id: editedUserID
     }
     ).then((res) => {
@@ -106,7 +106,7 @@ const ModalCentered = (props) => {
   const handleDeleteUser = async (e) => {
    
     e.preventDefault();
-    axios.delete(`http://localhost:3001/api/users/${deletedUserID}`).then((res) => {
+    axios.delete(`https://readingcornerb.herokuapp.com/api/users/${deletedUserID}`).then((res) => {
       toast.success('User Deleted');
     })
       .catch((err) => {
@@ -123,7 +123,7 @@ const ModalCentered = (props) => {
 
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:3001/api/books/create`, {title: title, author: author, genre: genre, picture: picture, price: price});
+      const res = await axios.post(`https://readingcornerb.herokuapp.com/api/books/create`, {title: title, author: author, genre: genre, picture: picture, price: price});
       if (res) {toast.success('Book Added');}
 
     } catch (err) {
@@ -135,7 +135,7 @@ const ModalCentered = (props) => {
   const handleEditBook = async (e) => {
 
     e.preventDefault();
-    axios.put(`http://localhost:3001/api/books/edit`, {id:editedBookID,title: title, author: author, genre: genre, picture: picture, price: price}
+    axios.put(`https://readingcornerb.herokuapp.com/api/books/edit`, {id:editedBookID,title: title, author: author, genre: genre, picture: picture, price: price}
     ).then((res) => {
       toast.success('Book Edited');
 
@@ -149,7 +149,7 @@ const ModalCentered = (props) => {
   const handleDeleteBook = async (e) => {
    
     e.preventDefault();
-    axios.delete(`http://localhost:3001/api/books/${deletedBookID}`).then((res) => {
+    axios.delete(`https://readingcornerb.herokuapp.com/api/books/${deletedBookID}`).then((res) => {
       toast.success('Book Deleted');
     })
       .catch((err) => {
@@ -164,7 +164,7 @@ const ModalCentered = (props) => {
 
   e.preventDefault();
   try {
-    const res = await axios.post(`http://localhost:3001/api/orders/create`, {books: orderBooks, total: total, date: date, id: orderUserID});
+    const res = await axios.post(`https://readingcornerb.herokuapp.com/api/orders/create`, {books: orderBooks, total: total, date: date, id: orderUserID});
     if (res) {toast.success('Order Added');}
 
   } catch (err) {
@@ -176,7 +176,7 @@ const ModalCentered = (props) => {
 const handleEditOrder = async (e) => {
 
   e.preventDefault();
-  axios.put(`http://localhost:3001/api/orders/edit`, {
+  axios.put(`https://readingcornerb.herokuapp.com/api/orders/edit`, {
     books: orderBooks, total: total, date: date, id: orderUserID , orderid:editedOrderID
   }
   ).then((res) => {
@@ -192,7 +192,7 @@ const handleEditOrder = async (e) => {
 const handleDeleteOrder= async (e) => {
  
   e.preventDefault();
-  axios.delete(`http://localhost:3001/api/orders/${deletedOrderID}`).then((res) => {
+  axios.delete(`https://readingcornerb.herokuapp.com/api/orders/${deletedOrderID}`).then((res) => {
     toast.success('Order Deleted');
   })
     .catch((err) => {

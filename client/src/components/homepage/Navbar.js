@@ -42,7 +42,7 @@ function NavbarComponent() {
         localStorage.setItem('date',date)
             orderBooks=''
         console.log(cart.items)
-        await fetch('http://localhost:3001/checkout', {
+        await fetch('https://readingcornerb.herokuapp.com/checkout', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

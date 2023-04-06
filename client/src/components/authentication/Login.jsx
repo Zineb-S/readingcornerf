@@ -33,7 +33,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3001/api/login", { email, password });
+      const res = await axios.post("https://readingcornerb.herokuapp.com/api/login", { email, password });
       console.log(res.data)
       localStorage.setItem('id',res.data[0].user_id)
       localStorage.setItem('fname',res.data[0].user_first_name)
@@ -45,10 +45,10 @@ const Login = () => {
       const role = localStorage.getItem('role')
       if (role === "admin") {
 
-        navigateDashboard(res.data.password, res.data.accessToken);
+        navigateDashboard(localStorage.getItem('password'), localStorage.getItem('token'));
       }
       else {
-        navigateToProfile(res.data.password, res.data.accessToken);
+        navigateToProfile(localStorage.getItem('password'), localStorage.getItem('token'));
       }
 
     } catch (err) {

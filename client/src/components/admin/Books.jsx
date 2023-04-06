@@ -16,7 +16,7 @@ import ModalCentered from './ModalCentered';
 const Books = () => {
   const [book, setBook] = React.useState([])
   React.useEffect(() => {
-    axios.get('http://localhost:3001/api/books').then((response) => {
+    axios.get('https://readingcornerb.herokuapp.com/api/books').then((response) => {
       setBook(response.data)
     
     })

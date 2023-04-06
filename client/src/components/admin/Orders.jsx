@@ -16,7 +16,7 @@ import ModalCentered from './ModalCentered';
 const Orders = () => {
   const [order, setOrder] = React.useState([])
   React.useEffect(() => {
-    axios.get('http://localhost:3001/api/orders').then((response) => {
+    axios.get('https://readingcornerb.herokuapp.com/api/orders').then((response) => {
       setOrder(response.data)
     
     })
